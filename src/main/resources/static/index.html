@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Compras Inteligente</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🛒 Lista de Compras Inteligente</h1>
+
+    <section class="form-section">
+        <div class="input-group">
+            <input type="text" id="produto" placeholder="Produto (ex: Arroz)">
+            <input type="text" id="supermercado" placeholder="Supermercado">
+            <input type="number" id="quantidade" placeholder="Qtd" min="1">
+
+            <input type="number" id="medida" placeholder="Peso/Vol" step="0.01">
+            <select id="unidade">
+                <option value="un">Unid.</option>
+                <option value="g">g</option>
+                <option value="kg">kg</option>
+                <option value="ml">ml</option>
+                <option value="L">L</option>
+            </select>
+
+            <input type="number" id="valor" placeholder="Preço (R$)" step="0.01">
+            <button onclick="adicionarItem()">Adicionar</button>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-group">
+            <input type="text" id="filtro-produto" placeholder="🔍 Filtrar por Nome..." onkeyup="atualizarTabela()">
+            <input type="text" id="filtro-mercado" placeholder="🏠 Filtrar por Mercado..." onkeyup="atualizarTabela()">
+        </div>
+        <div id="painel-inteligencia" class="info-box"></div>
+    </section>
+
+    <section class="list-section">
+        <table>
+            <thead>
+            <tr>
+                <th>Produto / Medida</th>
+                <th>Supermercado</th>
+                <th>Qtd</th>
+                <th>Preço Unit.</th>
+                <th>Total</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody id="tabela-corpo"></tbody>
+        </table>
+    </section>
+
+    <footer class="resumo">
+        <h3 id="label-total">Total Geral: R$ <span id="total-geral">0.00</span></h3>
+    </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
